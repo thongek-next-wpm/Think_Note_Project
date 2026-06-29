@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 connectDB();
 
 // What is  an Endpoint?
@@ -12,8 +14,11 @@ connectDB();
 // It is the point of entry in a communication channel when two systems are interacting.
 // In the context of web APIs, an endpoint typically refers to a specific URL that corresponds to a particular resource or functionality provided by the API.
 
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
 app.use("/api/notes", notesRoutes);
 
-app.listen(3000, () => {
-  console.log("Server started on PORT : 3000");
+app.listen(PORT, () => {
+  console.log(`Server started on PORT : ${PORT}`);
 });
