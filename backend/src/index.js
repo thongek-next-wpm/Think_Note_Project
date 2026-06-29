@@ -1,8 +1,11 @@
 import express from "express";
 import notesRoutes from "./routes/notesRoutes.js";
-
+import { connectDB } from "./config/database.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
+connectDB();
 
 // What is  an Endpoint?
 // An endpoint is a URL where an API can be accessed by a client application.
