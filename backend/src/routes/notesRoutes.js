@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getAllNotes,
+  getNoteById,
   createNote,
   updateNote,
   deleteNote,
@@ -10,6 +11,9 @@ const router = express.Router();
 
 // Get all notes
 router.get("/", getAllNotes);
+
+// get a single note by ID
+router.get("/:id", getNoteById);
 
 // Create a new note
 router.post("/", createNote);
