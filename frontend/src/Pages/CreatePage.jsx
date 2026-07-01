@@ -1,7 +1,5 @@
-import React from "react";
-
 const CreatePage = () => {
-  return <div>CreatePage</div>;
+  return <div className="min-h-screen">CreatePage</div>;
 };
 
 export default CreatePage;
